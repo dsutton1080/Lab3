@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+            <img id="img" src="./img1.jpeg" height="400" width="400"><br><br>
+            <button name="prev" onclick="change('previous')">Previous</button><br>
+            <button name="next" onclick="change('next')">Next</button>
+    </body>
+</html>
+
+<script>
+    index = 0;
+    arr = ["./img1.jpeg", "./img2.jpeg", "./img3.jpeg", "./img4.jpeg", "./img5.jpeg"];
+    function change(current){
+        if (current == 'next'){
+            if (index == 4){
+                index = 0;
+            }
+            else {
+                index++;
+            }
+        }
+        else {
+            if (index == 0){
+                index = 4
+            }
+            else {
+                index--;
+            }
+        }
+        document.getElementById("img").src = arr[index];
+    }
+
+</script>

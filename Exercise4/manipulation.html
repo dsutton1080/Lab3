@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <body id="body" style="border-style: solid;">
+        <p>Dummy Text, Enter values between 0 and 255 for RGB, enter a value of at least 1 for border width.</p><br>
+        <label for="border">Border</label><br>
+        R<input type="text" id="b_red">
+        G<input type="text" id="b_green">
+        B<input type="text" id="b_blue"><br><br>
+
+        <label for="color">Background Color</label><br>
+        R<input type="text" id="a_red">
+        G<input type="text" id="a_green">
+        B<input type="text" id="a_blue"><br><br>
+
+        <label for="width">Border Width</label><br>
+        <input type="text" id="width"><br><br>
+
+        <button onclick="updateValues()">Update</button>
+    </body>
+</html>
+
+<script>
+    function updateValues(){
+        document.getElementById("body").style.borderColor = 
+            "rgb(" + document.getElementById("b_red").value + ", " + 
+            document.getElementById("b_green").value + ", " + 
+            document.getElementById("b_blue").value + ")";
+        document.getElementById("body").style.backgroundColor = 
+            "rgb(" + document.getElementById("a_red").value + ", " + 
+            document.getElementById("a_green").value + ", " + 
+            document.getElementById("a_blue").value + ")";
+        document.getElementById("body").style.borderWidth = document.getElementById("width").value;
+    }
+</script>
